@@ -1,0 +1,48 @@
+{
+	"name": "ETL",
+	"properties": {
+		"activities": [
+			{
+				"name": "ETL",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "ETPOperation",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"sink1": {
+								"path": {
+									"value": "@pipeline().parameters.path",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"parameters": {
+			"path": {
+				"type": "string",
+				"defaultValue": "curated"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-05-19T22:59:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

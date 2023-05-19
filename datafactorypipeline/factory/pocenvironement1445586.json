@@ -1,0 +1,9 @@
+{
+	"name": "pocenvironement1445586",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c1b14e56-a29d-48a8-9b18-ce8ed26550c9",
+		"tenantId": "613c582a-9f4f-4ed1-8713-775b205f916e"
+	}
+}
